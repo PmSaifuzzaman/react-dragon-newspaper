@@ -1,6 +1,7 @@
 import Header from "../Shared/Header/Header";
 import BreakingNews from "../Shared/Navbar/BreakingNews";
 import Navbar from "../Shared/Navbar/Navbar";
+import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
                     <h1>News comming soon</h1>
                 </div>
                 <div className="border">
-                    <h2>Right side</h2>
+                    <RightSideNav></RightSideNav>
                 </div>
             </div>
         </div>
