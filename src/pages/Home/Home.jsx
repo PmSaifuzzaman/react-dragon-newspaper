@@ -1,4 +1,5 @@
 import Header from "../Shared/Header/Header";
+import BreakingNews from "../Shared/Navbar/BreakingNews";
 import Navbar from "../Shared/Navbar/Navbar";
 
 
@@ -6,6 +7,7 @@ const Home = () => {
     return (
         <div>
             <Header></Header>
+            <BreakingNews></BreakingNews>
             <Navbar></Navbar>
             <div className="grid gap-5 grid-cols-1 md:grid-cols-4">
                 <div className="border">
