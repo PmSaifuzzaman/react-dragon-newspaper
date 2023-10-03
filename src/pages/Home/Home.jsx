@@ -7,7 +7,17 @@ const Home = () => {
         <div>
             <Header></Header>
             <Navbar></Navbar>
-            <h2 className="font-Poppins">This is home</h2>
+            <div className="grid gap-5 grid-cols-1 md:grid-cols-4">
+                <div className="border">
+                    <h2>Left side</h2>
+                </div>
+                <div className="md:col-span-2 border">
+                    <h1>News comming soon</h1>
+                </div>
+                <div className="border">
+                    <h2>Right side</h2>
+                </div>
+            </div>
         </div>
     );
 };
