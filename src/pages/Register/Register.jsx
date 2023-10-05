@@ -1,14 +1,42 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { authContext } from "../../providers/AuthProvider";
+
 
 
 const Register = () => {
+    // Destructure from context api
+    const {createUser} = useContext(authContext);
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photoUrl = e.target.photoUrl.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name, photoUrl, email, password);
+
+        // Create user
+        createUser(email, password)
+        .then((userCredential) => {
+            // Signed up 
+            const user = userCredential.user;
+            console.log(user)
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage)
+          });
+        
+    }
+
     return (
         <div>
             <Navbar></Navbar>
             <div className="bg-slate-300">
                 <h2 className="text-center mt-10 pt-8 text-4xl font-semibold">Register your account </h2>
-                <form className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+                <form onSubmit={handleRegister} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Your Name</span>
