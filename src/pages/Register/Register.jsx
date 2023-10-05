@@ -20,7 +20,6 @@ const Register = () => {
         // Create user
         createUser(email, password)
         .then((userCredential) => {
-            // Signed up 
             const user = userCredential.user;
             console.log(user)
           })
